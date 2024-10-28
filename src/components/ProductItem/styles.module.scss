@@ -1,0 +1,66 @@
+@import "@styles/mixins.module.scss";
+@import "@styles/variable.module.scss";
+.boxImg {
+  width: 300px;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 6px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &:hover .showImgWhenHover {
+    opacity: 1;
+    transition: opacity 500ms;
+  }
+  .showImgWhenHover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+  }
+  &:hover .showIconAction {
+    opacity: 1;
+    transition:
+      opacity 500ms,
+      right 500ms;
+    right: 20px;
+  }
+  .showIconAction {
+    position: absolute;
+    opacity: 0;
+    background-color: $white_color;
+    border-radius: 8px;
+    right: 0px;
+    bottom: 20px;
+    .boxIcon {
+      height: 40px;
+      width: 40px;
+      @include flex_box_custom(center, center, 0px);
+      img {
+        height: 17px;
+        width: 17px;
+      }
+      &:hover {
+        background-color: #e7e4e4;
+        border-radius: 8px;
+        transition: background-color 500ms;
+      }
+    }
+  }
+}
+.desPrice {
+  font-size: 14px;
+  color: $thr_color;
+  margin-bottom: 3px;
+  font-weight: 400;
+}
+.title {
+  font-size: 16px;
+  color: $four_color;
+  margin-bottom: 3px;
+}

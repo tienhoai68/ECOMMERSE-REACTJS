@@ -3,11 +3,24 @@
 
 .container {
   @include flex_box_custom(center, center, 0px);
-  margin-top: 10px;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
+}
+.topHeader {
+  position: absolute;
+  top: 0;
+}
+.fixedHeader {
+  top: -80px;
+  position: fixed;
+  background-color: #ffffffe6;
+  box-shadow: 2px 0px 12px 0px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  transform: translateY(80px);
+  transition: transform 0.5s ease;
 }
 .containerHeader {
   width: 1250px;
@@ -18,6 +31,9 @@
 }
 .containerBoxIcon {
   @include flex_box_custom(center, center, 10px);
+  &:hover {
+    cursor: pointer;
+  }
 }
 .containerBox {
   @include flex_box_custom(center, center, 20px);

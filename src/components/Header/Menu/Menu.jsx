@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from '../styles.module.scss';
+import { SideBarContext } from '@/contexts/SidebarProvider';
 
 const Menu = ({ content, href }) => {
   const { menu } = styles;
-  return <div className={menu}>{content}</div>;
+  const { setIsOpen, setType } = useContext(SideBarContext);
+  const handleClickShowLogin = () => {
+    setIsOpen(true);
+    setType('login');
+  };
+  return (
+    <div onClick={() => handleClickShowLogin()} className={menu}>
+      {content}
+    </div>
+  );
 };
 
 export default Menu;
